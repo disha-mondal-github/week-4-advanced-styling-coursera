@@ -1,0 +1,148 @@
+
+body {
+    background-color: #dedede;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 32px;
+}
+
+a {
+    color: #000;
+    font-family:Arial, sans-serif;
+}
+
+p {
+   font-size: 15px;
+   font-family:Arial, sans-serif;
+}
+
+footer {
+  scroll-behavior:smooth;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 95%;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.grid img {
+  width: 100%;
+  height:150px;
+  display:block;
+
+}
+
+.grid figcaption{
+  background-color: #000;
+  color:#ffeb3b;
+  text-align: center;
+}
+
+.grid figure{
+  margin: 0;
+  border: 5px #000 solid;
+}
+@media screen and (min-width: 772px) {
+
+  .grid {
+  grid-template-columns: 45% 45%; 
+  align-items:center;
+  }
+  .grid figcaption{
+    padding:10px;
+  }
+  .grid img {
+    width: 100%;
+    height:100px;
+    display:block;
+  
+  }
+  .grid figure:last-child {
+  grid-column: 1 / span 2; /* Make the last image take up both columns */
+  } 
+  .grid figure {
+    margin: 0;
+    border-radius: 50%;
+    border: 5px #000 solid;
+    overflow: hidden;
+  }
+}
+.footer {
+  scroll-behavior: auto;
+  
+  }
+@media screen and (min-width: 992px) {
+
+  .grid figure{
+      border-radius: 0; /* Remove border radius from all images */
+      grid-column:auto;
+      }
+  .grid figure:last-child {
+        grid-column:unset;
+        } 
+  .grid figure:nth-child(3n) {
+  grid-column: 1/span 2; /* Make every third image take up both columns */
+  .grid figcaption{
+    padding:0;
+  }
+  }
+  .footer {
+    scroll-behavior: auto;
+  
+    }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (prefers-reduced-motion:no-preference) {
+
+  .footer {
+  animation:fadeIn 4s;
+  scroll-behavior: smooth;
+  
+  }
+  
+}
+@media screen and (prefers-reduced-motion:reduce) {
+
+  .footer {
+  scroll-behavior: auto;
+  
+  }
+  
+}
+@media screen and (prefers-color-scheme: light) {
+    
+  .grid figure {
+  
+  background-color: white; 
+  
+  color: black; /
+  
+  border-color: green; 
+  
+  }
+  
+@media screen and (prefers-color-scheme: dark) {
+    
+  .grid figure {
+  
+  background-color: #333; 
+  
+  color: #ffeb3b; /* Lighter font color (yellow-ish) for images */
+  
+  border-color: #000; /* Black border color for images */
+  
+  }
+  
+}
